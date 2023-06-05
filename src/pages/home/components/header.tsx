@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="flex rounded-lg justify-between ">
+    <div className="flex items-center justify-between rounded-xl border border-black p-4 ">
       <div>
         <h1 className="text-4xl">
           Hello, <span className="font-semibold">Manupa!</span>
@@ -10,6 +10,7 @@ function Header() {
           nulla.
         </p>
       </div>
+      <h1 className="text-6xl font-semibold">13:57</h1>
     </div>
   );
 }
