@@ -9,7 +9,7 @@ import sensors from "../../data/sensors";
 
 function HomePage() {
   return (
-    <div className="min-h-[80vh] overflow-y-scroll rounded-2xl border border-black p-8">
+    <div className="overflow-y-scroll rounded-2xl border border-black p-8">
       <Header />
       {/* Devices Section */}
       <div className="my-8  border-black">
