@@ -7,9 +7,55 @@ import SensorCard from "./components/sensor-card";
 import { useState } from "react";
 
 import locations from "../../data/locations";
-import devices from "../../data/devices";
+
+import Device from "../../types/device";
 
 function HomePage() {
+  const [devices, setDevices] = useState([
+    {
+      id: 1,
+      name: "Main Light",
+      image: "",
+      state: false,
+      location: "Living Room",
+    },
+    {
+      id: 2,
+      name: "Roof Light",
+      image: "",
+      state: false,
+      location: "Bed Room",
+    },
+    {
+      id: 3,
+      name: "Night Light",
+      image: "",
+      state: false,
+      location: "Bed Room",
+    },
+    {
+      id: 4,
+      name: "Ceiling Fan",
+      image: "",
+      state: false,
+      location: "Living Room",
+    },
+    {
+      id: 5,
+      name: "Table Fan",
+      image: "",
+      state: false,
+      location: "Bed Room",
+    },
+    {
+      id: 6,
+      name: "Air Conditioner",
+      image: "",
+      state: false,
+      location: "Bed Room",
+    },
+  ]);
+
   const [filteredDevices, setFilteredDevices] = useState(devices);
 
   const [selectedLocation, setSelectedLocation] = useState("All");
@@ -22,6 +68,24 @@ function HomePage() {
           : devices.filter((device) => device.location === location)
       );
       return location;
+    });
+  };
+
+  const handleDeviceUpdate = (updatedDevice: Device) => {
+    setDevices((prevDevices) => {
+      return prevDevices.map((device) =>
+        device.id === updatedDevice.id
+          ? { ...device, ...updatedDevice }
+          : device
+      );
+    });
+
+    setFilteredDevices((prevDevices) => {
+      return prevDevices.map((device) =>
+        device.id === updatedDevice.id
+          ? { ...device, ...updatedDevice }
+          : device
+      );
     });
   };
 
@@ -43,7 +107,11 @@ function HomePage() {
         </div>
         <div className=" my-4 grid grid-cols-4 gap-4  border-black">
           {filteredDevices.map((device, i) => (
-            <DeviceCard device={device} key={i} />
+            <DeviceCard
+              device={device}
+              key={i}
+              handleDeviceUpdate={handleDeviceUpdate}
+            />
           ))}
         </div>
       </div>
