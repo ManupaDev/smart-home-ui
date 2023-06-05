@@ -2,6 +2,7 @@ import { SearchBar } from "./components/search-bar";
 import Header from "./components/header";
 import RoomChip from "./components/room-chip";
 import DeviceCard from "./components/device-card";
+import SensorCard from "./components/sensor-card";
 
 import devices from "../../data/devices";
 import sensors from "../../data/sensors";
@@ -38,8 +39,8 @@ function HomePage() {
           <RoomChip />
         </div>
         <div className=" my-4 grid grid-cols-4 gap-4  border-black">
-          {devices.map((device, i) => (
-            <DeviceCard device={device} key={i} />
+          {sensors.map((sensor, i) => (
+            <SensorCard sensor={sensor} key={i} />
           ))}
         </div>
       </div>
