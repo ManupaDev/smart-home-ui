@@ -1,26 +1,25 @@
 import { PowerIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 
-type Device = {
-  id: number;
-  name: string;
-  image: string;
-  state: boolean;
-};
+import Device from "../types/device";
 
-function DeviceCard({ device }: { device: Device }) {
+function DeviceCard({
+  device,
+  handleDeviceUpdate,
+}: {
+  device: Device;
+  handleDeviceUpdate: (device: Device) => void;
+}) {
   const { id, name, image, state } = device;
 
-  const [power, setPower] = useState(state);
-
   const handleClick = () => {
-    setPower(!power);
+    handleDeviceUpdate({ id, name, image, state: !state });
   };
 
   return (
     <div className="relative h-64 w-64 rounded-2xl border border-black p-4">
       <h1 className="text-2xl">{name}</h1>
-      <PowerButton power={power} handleClick={handleClick} />
+      <PowerButton state={state} handleClick={handleClick} />
     </div>
   );
 }
@@ -28,21 +27,20 @@ function DeviceCard({ device }: { device: Device }) {
 export default DeviceCard;
 
 function PowerButton({
-  power,
+  state,
   handleClick,
 }: {
-  power: boolean;
+  state: boolean;
   handleClick: () => void;
 }) {
-
-  if (power) {
+  if (state) {
     return (
       <button
         type="button"
         onClick={handleClick}
-        className="absolute right-4 bottom-4 flex h-12 w-12 cursor-pointer bg-black items-center  justify-center rounded-full border border-black"
+        className="absolute right-4 bottom-4 flex h-12 w-12 cursor-pointer items-center justify-center  rounded-full border border-black bg-black"
       >
-        <PowerIcon width={36} height={36}  className="text-white"/>
+        <PowerIcon width={36} height={36} className="text-white" />
       </button>
     );
   }
