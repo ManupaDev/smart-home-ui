@@ -4,7 +4,6 @@ import RoomChip from "./components/room-chip";
 import DeviceCard from "./components/device-card";
 import SensorCard from "./components/sensor-card";
 
-import sensors from "../../data/sensors";
 import { useState } from "react";
 import Device from "./types/device";
 
@@ -48,39 +47,6 @@ function HomePage() {
     },
   ]);
 
-  const [sensors, setSensors] = useState([
-    {
-      id: 1,
-      name: "Temperature",
-      image: "",
-      value: "",
-    },
-    {
-      id: 2,
-      name: "Humidity",
-      image: "",
-      value: "",
-    },
-    {
-      id: 3,
-      name: "Window 1",
-      image: "",
-      value: "",
-    },
-    {
-      id: 4,
-      name: "Window 2",
-      image: "",
-      value: "",
-    },
-    {
-      id: 5,
-      name: "Main Door",
-      image: "",
-      value: "",
-    },
-  ]);
-
   const handleDeviceUpdate = (updatedDevice: Device) => {
     setDevices((prevDevices) => {
       return prevDevices.map((device) =>
@@ -111,23 +77,6 @@ function HomePage() {
               handleDeviceUpdate={handleDeviceUpdate}
               key={i}
             />
-          ))}
-        </div>
-      </div>
-
-      {/* Sensors Section */}
-      <div className="my-8  border-black">
-        <h1 className="text-3xl font-semibold">Sensors</h1>
-        <SearchBar />
-        <div className="my-4 flex gap-x-4 border-black">
-          <RoomChip />
-          <RoomChip />
-          <RoomChip />
-          <RoomChip />
-        </div>
-        <div className=" my-4 grid grid-cols-4 gap-4  border-black">
-          {sensors.map((sensor, i) => (
-            <SensorCard sensor={sensor} key={i} />
           ))}
         </div>
       </div>
