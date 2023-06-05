@@ -55,32 +55,19 @@ function HomePage() {
       location: "Bed Room",
     },
   ]);
-
-  const [filteredDevices, setFilteredDevices] = useState(devices);
-
   const [selectedLocation, setSelectedLocation] = useState("All");
 
+  const filteredDevices =
+    selectedLocation === "All"
+      ? [...devices]
+      : devices.filter((device) => device.location === selectedLocation);
+
   const handleLocationSelect = (location: string) => {
-    setSelectedLocation(() => {
-      setFilteredDevices(
-        location === "All"
-          ? devices
-          : devices.filter((device) => device.location === location)
-      );
-      return location;
-    });
+    setSelectedLocation(location);
   };
 
   const handleDeviceUpdate = (updatedDevice: Device) => {
     setDevices((prevDevices) => {
-      return prevDevices.map((device) =>
-        device.id === updatedDevice.id
-          ? { ...device, ...updatedDevice }
-          : device
-      );
-    });
-
-    setFilteredDevices((prevDevices) => {
       return prevDevices.map((device) =>
         device.id === updatedDevice.id
           ? { ...device, ...updatedDevice }
