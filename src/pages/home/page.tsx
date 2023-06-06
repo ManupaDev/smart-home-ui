@@ -3,7 +3,6 @@ import Header from "./components/header";
 import RoomChip from "./components/room-chip";
 import DeviceCard from "./components/device-card";
 
-import devices from "../../data/devices";
 
 function HomePage() {
   const devices = [
