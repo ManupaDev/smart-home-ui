@@ -4,7 +4,7 @@ import LocationChip from "./components/location-chip";
 import DeviceCard from "./components/device-card";
 import SensorCard from "./components/sensor-card";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import locations from "../../data/locations";
 
@@ -54,16 +54,22 @@ function HomePage() {
     },
   ]);
 
-  const [selectedLocation, setSelectedLocation] = useState("All");
+  const [search, setSearch] = useState("");
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  const handleClear = () => {
+    setSearch("");
+  };
 
   const filteredDevices =
-    selectedLocation === "All"
-      ? [...devices]
-      : devices.filter((device) => device.location === selectedLocation);
-
-  const handleLocationSelect = (location: string) => {
-    setSelectedLocation(location);
-  };
+    search === ""
+      ? devices
+      : devices.filter(
+          (device) => device.name.replace(" ", "").toLowerCase().includes(search)
+        );
 
   return (
     <div className="overflow-y-scroll rounded-2xl border border-black p-8">
@@ -71,14 +77,14 @@ function HomePage() {
       {/* Devices Section */}
       <div className="my-8  border-black">
         <h1 className="text-3xl font-semibold">Devices</h1>
-        <SearchBar />
+        <SearchBar
+          handleChange={handleChange}
+          search={search}
+          handleClear={handleClear}
+        />
         <div className="my-4 flex gap-x-4 border-black">
           {locations.map((location) => (
-            <LocationChip
-              selectedLocation={selectedLocation}
-              handleLocationSelect={handleLocationSelect}
-              location={location}
-            />
+            <LocationChip location={location} />
           ))}
         </div>
         <div className=" my-4 grid grid-cols-4 gap-4  border-black">
