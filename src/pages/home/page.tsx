@@ -6,9 +6,10 @@ import SensorCard from "./components/sensor-card";
 
 import { ChangeEvent, useState } from "react";
 
-import locations from "../../data/locations";
 
 function HomePage() {
+  const locations = ["All", "Living Room", "Bed Room"];
+
   const [devices, setDevices] = useState([
     {
       id: 1,
