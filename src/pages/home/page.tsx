@@ -21,11 +21,15 @@ function HomePage() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    getAllDevices()
-      .then((data) => setDevices(data))
-      .catch((error) => {
+    const fetchDevices = async () => {
+      try {
+        const data = await getAllDevices();
+        setDevices(data)
+      } catch (error) {
         setIsError(true);
-      });
+      }
+    };
+    fetchDevices();
     setIsLoading(false);
   }, []);
 
@@ -86,7 +90,37 @@ function HomePage() {
             ))}
           </div>
           <div className=" my-4 grid grid-cols-4 gap-4  border-black">
-            Loading...
+            <h1>Loading...</h1>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="overflow-y-scroll rounded-2xl border border-black p-8">
+        <Header />
+        {/* Devices Section */}
+        <div className="my-8  border-black">
+          <h1 className="text-3xl font-semibold">Devices</h1>
+          <SearchBar
+            search={search}
+            handleChange={handleChange}
+            handleClear={handleClear}
+          />
+          <div className="my-4 flex gap-x-4 border-black">
+            {locations.map((location, i) => (
+              <LocationChip
+                key={i}
+                selectedLocation={selectedLocation}
+                handleLocationSelect={handleLocationSelect}
+                location={location}
+              />
+            ))}
+          </div>
+          <div className=" my-4 grid grid-cols-4 gap-4  border-black">
+            <h1 className="text-red-500">Could Not Load Data</h1>
           </div>
         </div>
       </div>
