@@ -17,7 +17,7 @@ function DeviceCard({
   };
 
   return (
-    <div className="relative h-64 w-64 rounded-2xl border border-black p-4">
+    <div className="relative shadow-xl h-64 w-64 rounded-3xl bg-white  border-black p-6">
       <h1 className="text-2xl">{name}</h1>
       <PowerButton state={state} handleClick={handleClick} />
     </div>
@@ -38,7 +38,7 @@ function PowerButton({
       <button
         type="button"
         onClick={handleClick}
-        className="absolute right-4 bottom-4 flex h-12 w-12 cursor-pointer items-center justify-center  rounded-full border border-black bg-black"
+        className="absolute right-6 bottom-6 flex h-12 w-12 cursor-pointer items-center justify-center  rounded-full  border-2 border-smoke-600 bg-smoke-600"
       >
         <PowerIcon width={36} height={36} className="text-white" />
       </button>
@@ -49,7 +49,7 @@ function PowerButton({
     <button
       type="button"
       onClick={handleClick}
-      className="absolute right-4 bottom-4 flex h-12 w-12 cursor-pointer items-center  justify-center rounded-full border border-black"
+      className="absolute right-6 bottom-6 flex h-12 w-12 text-smoke-600 cursor-pointer items-center  justify-center rounded-full  border-2 border-smoke-600"
     >
       <PowerIcon width={36} height={36} />
     </button>

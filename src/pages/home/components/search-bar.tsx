@@ -1,7 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ChangeEvent, FormEvent } from "react";
 
-export function SearchBar({
+export default function SearchBar({
   search,
   handleChange,
   handleClear,
@@ -17,7 +17,7 @@ export function SearchBar({
 
   return (
     <form className="my-4 border-black" onSubmit={handleSubmit}>
-      <div className="flex w-fit items-center gap-x-4 rounded-lg border border-black px-2 ">
+      <div className="flex bg-white w-fit items-center gap-x-4 rounded-lg  border-black px-2 ">
         <input
           type="search"
           className="rounded-lg py-1 focus:outline-none"

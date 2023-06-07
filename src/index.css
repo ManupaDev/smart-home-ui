@@ -7,3 +7,7 @@
 .grid-cols_1_2_4 {
   grid-template-columns: 1fr 4fr 19fr;
 }
+
+.bg-underlay-1 {
+  background: linear-gradient(180deg, #5136f5 0%, #547bf5 100%);
+}

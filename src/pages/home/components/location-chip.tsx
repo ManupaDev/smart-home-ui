@@ -16,7 +16,7 @@ function LocationChip({
       <button
         type="button"
         onClick={handleClick}
-        className="block rounded-md border border-black bg-black px-2 py-1 text-white"
+        className="block  rounded-lg  border-black bg-casual-blue  px-2 py-1 text-white"
       >
         {location}
       </button>
@@ -27,7 +27,7 @@ function LocationChip({
     <button
       type="button"
       onClick={handleClick}
-      className="block rounded-md border border-black px-2 py-1"
+      className="block rounded-lg border border-smoke-500  bg-white px-2 py-1"
     >
       {location}
     </button>

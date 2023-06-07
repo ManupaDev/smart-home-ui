@@ -1,10 +1,9 @@
-import { SearchBar } from "./components/search-bar";
+import SearchBar from "./components/search-bar";
 import Header from "./components/header";
 import LocationChip from "./components/location-chip";
+import DevicesSection from "./components/devices-section";
 
 import { ChangeEvent, useState } from "react";
-
-import DevicesSection from "./components/devices-section";
 
 function HomePage() {
   const locations = ["All", "Living Room", "Bed Room"];
@@ -26,7 +25,7 @@ function HomePage() {
   };
 
   return (
-    <div className="overflow-y-scroll rounded-2xl border border-black p-8">
+    <div className="overflow-y-scroll bg-smoke-500 rounded-2xl  border-black p-8">
       <Header />
       {/* Devices Section */}
       <div className="my-8  border-black">
