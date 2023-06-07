@@ -1,6 +1,5 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ChangeEvent, FormEvent } from "react";
-import { useState } from "react";
 
 export function SearchBar({
   search,
