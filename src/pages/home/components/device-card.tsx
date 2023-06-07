@@ -10,10 +10,10 @@ function DeviceCard({
   device: Device;
   handleDeviceUpdate: (device: Device) => void;
 }) {
-  const { id, name, image, state, location } = device;
+  const { _id, name, image, state, location } = device;
 
   const handleClick = () => {
-    handleDeviceUpdate({ id, name, image, state: !state, location });
+    handleDeviceUpdate({ _id, name, image, state: !state, location });
   };
 
   return (
