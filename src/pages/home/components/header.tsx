@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-dayjs.extend(advancedFormat)
+dayjs.extend(advancedFormat);
 import { Dayjs } from "dayjs";
 
 import { useEffect, useState } from "react";
