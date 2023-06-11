@@ -66,7 +66,7 @@ function DevicesSection({
   }
 
   return (
-    <div className="my-4 grid grid-cols-4 gap-4  border-black">
+    <div className="my-4 grid grid-cols-4 gap-4 border-black">
       {filteredDevices.map((device, i) => (
         <DeviceCard
           device={device}

@@ -25,17 +25,16 @@ function HomePage() {
   };
 
   return (
-    <div className="overflow-y-scroll bg-smoke-500 rounded-2xl  border-black p-8">
+    <div className="overflow-y-scroll rounded-3xl border-black  bg-white p-8">
       <Header />
       {/* Devices Section */}
-      <div className="my-8  border-black">
-        <h1 className="text-3xl font-semibold">Devices</h1>
+      <div className="my-5  border-black">
         <SearchBar
           search={search}
           handleChange={handleChange}
           handleClear={handleClear}
         />
-        <div className="my-4 flex gap-x-4 border-black">
+        <div className="my-5 flex gap-x-4 border-black">
           {locations.map((location, i) => (
             <LocationChip
               key={i}
