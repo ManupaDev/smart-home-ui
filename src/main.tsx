@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import RootLayout from "./pages/layout";
 import HomePage from "./pages/home/page";
+import SettingsPage from "./pages/settings/page";
 import "./index.css";
 
 import {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <HomePage />,
+      },
+      {
+        path: "/settings",
+        element: <SettingsPage />,
       },
     ],
   },

@@ -11,3 +11,7 @@
 .bg-underlay-1 {
   background: linear-gradient(180deg, #5136f5 0%, #547bf5 100%);
 }
+
+.glow-1{
+  box-shadow: 0 0 10px #25FFFF;
+}
