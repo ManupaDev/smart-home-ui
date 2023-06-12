@@ -9,12 +9,6 @@ import { useEffect, useState } from "react";
 import ProfileImg from "./../../../../public/images/profile.jpg";
 
 function Header() {
-  const [time, setTime] = useState<Dayjs>(dayjs());
-  useEffect(() => {
-    const timer = setInterval(() => setTime(dayjs()), 1000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className=" flex  justify-between rounded-2xl border-black    text-white ">
       <div>
@@ -30,9 +24,6 @@ function Header() {
           <div className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-black  bg-off_white">
             <BellIcon width={20} height={20} className="block text-black" />
           </div>
-          <p className="text-2xl font-semibold text-black">
-            <span className="text-sm font-normal">{time.format("Do dddd MMMM YYYY")}</span> {time.format("HH:mm")}
-          </p>
         </div>
         <img src={ProfileImg} className="block h-20 w-20 rounded-full" alt="" />
       </div>

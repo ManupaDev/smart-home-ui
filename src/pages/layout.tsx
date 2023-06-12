@@ -1,3 +1,4 @@
+import { TopWidget } from "./components/top-widget";
 import { Sidebar } from "./components/sidebar";
 import { Outlet } from "react-router-dom";
 
@@ -5,7 +6,10 @@ function RootLayout() {
   return (
     <div className="RootLayout grid-cols_1_2_4 grid h-screen gap-x-4 bg-midnight-black px-8 py-8 font-sans">
       <Sidebar />
-      <div className="rounded-3xl  border-black bg-glass_grey"></div>
+      <div className="grid-rows-2_3  grid gap-y-4 rounded-3xl border-white ">
+        <TopWidget />
+        <div className="w-full rounded-3xl bg-glass_grey"></div>
+      </div>
       <Outlet />
     </div>
   );
