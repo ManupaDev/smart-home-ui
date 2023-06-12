@@ -30,7 +30,7 @@ export function TopWidget({}) {
             <WiThermometer className="h-6 w-6 text-white" />
           </div>
           <div>
-            <span className="block text-xs text-white">Temperature</span>
+            <span className="block text-xs text-smoke-200 ">Temperature</span>
             <span className="block text-lg text-white">27°C</span>
           </div>
         </div>
@@ -40,7 +40,7 @@ export function TopWidget({}) {
             <WiRain className="h-6 w-6 text-white" />
           </div>
           <div>
-            <span className="block text-xs text-white">Rain Chance</span>
+            <span className="block text-xs text-smoke-200 ">Rain Chance</span>
             <span className="block text-lg text-white">32%</span>
           </div>
         </div>
