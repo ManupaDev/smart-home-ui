@@ -6,6 +6,7 @@ import {
   signOut,
   Auth,
   User,
+  signInWithRedirect,
 } from "firebase/auth";
 
 const auth = getAuth(app);
@@ -30,7 +31,7 @@ export const getCurrentUser = async () => {
 
 export const signUpUser = async () => {
   try {
-    const result = await signInWithPopup(auth, provider);
+    const result = await signInWithRedirect(auth, provider);
     return result;
   } catch (error) {
     console.log("auth cancelled");

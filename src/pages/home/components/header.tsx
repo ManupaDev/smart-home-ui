@@ -29,7 +29,7 @@ function Header() {
             <BellIcon width={20} height={20} className="block text-black" />
           </div>
         </div>
-        <img referrerPolicy="no-referrer" src={"https://lh3.googleusercontent.com/a/AAcHTtewPD9Z9_oWxhpVyOjTXmhNZ_kkP28keg4XNJqJ=s96-c"} className="block h-20 w-20 rounded-full" alt="" />
+        <img referrerPolicy="no-referrer" src={user?.photoURL?user?.photoURL:""} className="block h-20 w-20 rounded-full" alt="" />
       </div>
     </div>
   );
