@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 import RootLayout from "./pages/layout";
 import HomePage from "./pages/home/page";
 import SettingsPage from "./pages/settings/page";
+import SignInPage from "./pages/auth/sign-in/page";
 import "./index.css";
+import UserContext from "./contexts/user-context";
 
 import {
   createBrowserRouter,
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
         element: <SettingsPage />,
       },
     ],
+  },
+  {
+    path: "/auth/sign-in",
+    element: <SignInPage />,
   },
 ]);
 
