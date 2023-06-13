@@ -31,7 +31,9 @@ export const getCurrentUser = async () => {
 
 export const signUpUser = async () => {
   try {
-    const result = await signInWithRedirect(auth, provider);
+    const result = await signInWithPopup(auth, provider);
+    console.log(result);
+    
     return result;
   } catch (error) {
     console.log("auth cancelled");
