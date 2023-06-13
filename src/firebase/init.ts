@@ -6,7 +6,7 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAS88a53Cfvhj1O9tDKgu-Q1QTNEn9MuEM",
-  authDomain: "stemlink-ee4e7.firebaseapp.com",
+  authDomain: "smart-home-ui-git-with-high-fid-match-dribble-manupadev.firebaseapp.com",
   projectId: "stemlink-ee4e7",
   storageBucket: "stemlink-ee4e7.appspot.com",
   messagingSenderId: "196519511175",
