@@ -10,8 +10,8 @@ const firebaseConfig = {
   projectId: "stemlink-ee4e7",
   storageBucket: "stemlink-ee4e7.appspot.com",
   messagingSenderId: "196519511175",
-  appId: "1:196519511175:web:0847edbfc9a32cf3332422"
+  appId: "1:196519511175:web:33ec36c3a3c80e13332422"
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
