@@ -2,15 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { signUpUser } from "../../../firebase/auth";
 
 function SignInPage() {
-
   const navigate = useNavigate();
 
-  const handleSignIn  = async () =>{
+  const handleSignIn = async () => {
     const result = await signUpUser();
     if (result?.user) {
-      navigate("/home")
+      navigate("/home");
     }
-  }
+  };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-midnight-black">

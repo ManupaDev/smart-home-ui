@@ -2,11 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { signOutUser } from "../../firebase/auth";
 
 function SettingsPage() {
-   const navigate = useNavigate();
-    const handleSignOut = async () => {
+  const navigate = useNavigate();
+  const handleSignOut = async () => {
     signOutUser();
-    navigate("/auth/sign-in")
-
+    navigate("/auth/sign-in");
   };
 
   return (

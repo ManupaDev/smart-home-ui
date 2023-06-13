@@ -4,16 +4,20 @@ dayjs.extend(advancedFormat);
 import { Dayjs } from "dayjs";
 import { BellIcon } from "@heroicons/react/24/outline";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import ProfileImg from "./../../../../public/images/profile.jpg";
+import AuthContext from "../../../contexts/auth-context";
 
 function Header() {
+
+  const {user} = useContext(AuthContext);
+
   return (
     <div className=" flex  justify-between rounded-2xl border-black    text-white ">
       <div>
         <h1 className="text-4xl text-black">
-          Hello, <span className="font-semibold ">Manupa!</span>
+          Hello, <span className="font-semibold ">{user?.displayName}!</span>
         </h1>
         <p className="mt-4 text-lg text-black">
           Your devices are under your control.
@@ -25,7 +29,7 @@ function Header() {
             <BellIcon width={20} height={20} className="block text-black" />
           </div>
         </div>
-        <img src={ProfileImg} className="block h-20 w-20 rounded-full" alt="" />
+        <img referrerPolicy="no-referrer" src={"https://lh3.googleusercontent.com/a/AAcHTtewPD9Z9_oWxhpVyOjTXmhNZ_kkP28keg4XNJqJ=s96-c"} className="block h-20 w-20 rounded-full" alt="" />
       </div>
     </div>
   );

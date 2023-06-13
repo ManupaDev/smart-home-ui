@@ -5,13 +5,14 @@ import HomePage from "./pages/home/page";
 import SettingsPage from "./pages/settings/page";
 import SignInPage from "./pages/auth/sign-in/page";
 import "./index.css";
-import UserContext from "./contexts/user-context";
+import AuthContext from "./contexts/auth-context";
 
 import {
   createBrowserRouter,
   redirect,
   RouterProvider,
 } from "react-router-dom";
+import { AuthProvider } from "./contexts/auth-provider";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );
