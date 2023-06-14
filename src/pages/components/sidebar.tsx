@@ -38,7 +38,7 @@ export function Sidebar({}) {
         }}
       </NavLink>
 
-      <NavLink to={"/settings"}>
+      <NavLink to={"/statistics"}>
         {({ isActive }) => {
           return (
             <div
@@ -54,7 +54,7 @@ export function Sidebar({}) {
         }}
       </NavLink>
 
-      <NavLink to={"/settings"}>
+      <NavLink to={"/security"}>
         {({ isActive }) => {
           return (
             <div
