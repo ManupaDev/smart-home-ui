@@ -6,7 +6,7 @@ import { BellIcon } from "@heroicons/react/24/outline";
 
 import { useEffect, useState } from "react";
 
-import ProfileImg from "./../../../../public/images/profile.jpg";
+import ProfileImg from "/images/profile.jpg";
 
 function Header() {
   return (
