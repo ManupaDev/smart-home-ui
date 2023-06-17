@@ -5,7 +5,7 @@ import { WiWindy } from "react-icons/wi";
 
 export function PowerWidget({}) {
   return (
-    <div className="w-full overflow-y-scroll rounded-3xl bg-glass_grey p-6">
+    <div className="w-full  rounded-3xl bg-glass_grey p-6">
       <h1 className="text-xl text-white">Power Consumption</h1>
       <p className="mt-1 text-xs  text-smoke-200">
         Summary of the energy consumption
