@@ -18,9 +18,13 @@ function DeviceCard({
 
   return (
     <div
-      className={`relative  h-72 w-56 rounded-3xl border-black overflow-hidden   shadow-xl`}
+      className={`relative  h-72 w-56 overflow-hidden rounded-3xl border-black   shadow-xl`}
     >
-      <img src={image} className="block max-w-full rounded-3xl  object-cover" alt="" />
+      <img
+        src={image}
+        className="block max-w-full rounded-3xl  object-cover"
+        alt=""
+      />
       <div className="absolute left-0 right-0  bottom-0 rounded-bl-3xl rounded-br-3xl border-black bg-white  py-2 px-4 opacity-80">
         <div className="flex items-center  justify-between">
           <h3 className="text-xl  text-black">{name}</h3>
